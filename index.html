@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundle & Save</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 20px;
+            color: #27ae60;
+        }
+
+        .bundle-options {
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            /* border: 1px solid #ddd; */
+            border-radius: 5px;
+            /* overflow: hidden; */
+            margin-bottom: 20px;
+            
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+            /* Add space between items */
+            border-radius: 6px;
+            border: 2px solid #008b0c;
+    overflow: hidden;
+        }
+
+        .accordion-item:last-child {
+            margin-bottom: 0;
+            
+        }
+
+        .accordion-header {
+            padding: 10px;
+            background: #fff;
+            cursor: pointer;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .accordion-header input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background: #fff;
+        }
+
+        .accordion-header.active+.accordion-content {
+            display: block;
+        }
+
+        .sizes-colors {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        select {
+            flex: 1;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer .total {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #219150;
+        }
+
+        .shipping-info {
+            font-size: 12px;
+            color: #999;
+            margin-top: -10px;
+        }
+
+        
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    accordionHeaders.forEach(h => h.classList.remove('active'));
+                    header.classList.add('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Bundle & Save</h1>
+        </header>
+
+        <section class="bundle-options accordion">
+            <!-- 1 Pair Option -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div style="display: flex; flex-wrap: nowrap; justify-content: space-between;">
+                        <div style="display: flex;">
+                            <input type="radio" name="bundle" id="bundle3" value="3" />
+                            <label for="bundle3">1 Pair <br><b>DKK 195.00</b></label>
+                        </div>
+                        <div>
+                            <label for="bundle3"> <b>(50% OFF)</b></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <div style="display: flex; flex-wrap: nowrap;">
+                        <div>
+                            <div
+                                style="display: flex; flex-wrap: nowrap; justify-content: space-evenly; margin-bottom: -20px;">
+                                <p><small>Size </small></p>
+                                <p><small>Colour</small></p>
+                            </div>
+                            <small class="sizes-colors">
+                                <p><small>#1</small></p>
+                                <select name="size" class="sizes-colors" style="min-width: 75px;">
+                                    <option value="S">S</option>
+                                </select>
+                                <select name="color" class="sizes-colors">
+                                    <option value="Color">colour</option>
+                                </select>
+                            </small>
+                            <small class="sizes-colors">
+                                <p><small>#2</small></p>
+                                <select name="size" class="sizes-colors">
+                                    <option value="S">S</option>
+                                </select>
+                                <select name="color" class="sizes-colors">
+                                    <option value="Color">colour</option>
+                                </select>
+                            </small>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 Pair Option -->
+            <div class="accordion-item ">
+                <div class="accordion-header">
+                    <div style="display: flex; flex-wrap: nowrap; justify-content: space-between;">
+                        <div style="display: flex;">
+                            <input type="radio" name="bundle" id="bundle3" value="3" />
+                            <label for="bundle3">2 Pair <br><b>DKK 345.00</b></label>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <small>
+                                <label for="bundle3"> <s style="font-size: 10px;">DKK 195.00</s> </label>
+                            </small>
+                        </div>
+                        <div>
+                            <label for="bundle3"> <span style="color: #219150;">Most Popular</span> <br> &nbsp;&nbsp;&nbsp;<b>(40% OFF)</b> </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <div style="display: flex; flex-wrap: nowrap;">
+                        <div>
+                            <div
+                                style="display: flex; flex-wrap: nowrap; justify-content: space-evenly; margin-bottom: -20px;">
+                                <p><small>Size </small></p>
+                                <p><small>Colour</small></p>
+                            </div>
+                            <small class="sizes-colors">
+                                <p><small>#1</small></p>
+                                <select name="size" class="sizes-colors" style="min-width: 75px;">
+                                    <option value="S">S</option>
+                                </select>
+                                <select name="color" class="sizes-colors">
+                                    <option value="Color">colour</option>
+                                </select>
+                            </small>
+                            <small class="sizes-colors">
+                                <p><small>#2</small></p>
+                                <select name="size" class="sizes-colors">
+                                    <option value="S">S</option>
+                                </select>
+                                <select name="color" class="sizes-colors">
+                                    <option value="Color">colour</option>
+                                </select>
+                            </small>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Pair Option -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div style="display: flex; flex-wrap: nowrap; justify-content: space-between;">
+                        <div style="display: flex;">
+                            <input type="radio" name="bundle" id="bundle3" value="3" />
+                            <label for="bundle3">3 Pair <br><b>DKK 528.00</b></label>
+                        </div>
+                        <div>
+                            <label for="bundle3"> <b>(60% OFF)</b></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-content ">
+                    <div style="display: flex; flex-wrap: nowrap;">
+                        <div>
+                            <div
+                                style="display: flex; flex-wrap: nowrap; justify-content: space-evenly; margin-bottom: -20px;">
+                                <p><small>Size </small></p>
+                                <p><small>Colour</small></p>
+                            </div>
+                            <small class="sizes-colors">
+                                <p><small>#1</small></p>
+                                <select name="size" class="sizes-colors" style="min-width: 75px;">
+                                    <option value="S">S</option>
+                                </select>
+                                <select name="color" class="sizes-colors">
+                                    <option value="Color">colour</option>
+                                </select>
+                            </small>
+                            <small class="sizes-colors">
+                                <p><small>#2</small></p>
+                                <select name="size" class="sizes-colors">
+                                    <option value="S">S</option>
+                                </select>
+                                <select name="color" class="sizes-colors">
+                                    <option value="Color">colour</option>
+                                </select>
+                            </small>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div style="display: flex; flex-wrap: nowrap; justify-content: space-between;">
+                <p><small style="color: #219150;"> Free 2 Day Shipping</small></p>
+                <p><small>Total:</small> <b>DKK 360.00</b></p>
+            </div>
+            <button>+Add to Cart</button>
+            <div>
+                <P style="font-size: small ; text-align-last: right;">@ Powered by Pumper</P>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
